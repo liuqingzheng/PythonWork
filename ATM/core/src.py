@@ -8,7 +8,6 @@ user_data = {
     'is_auth': False,
 }
 
-
 def login():
     '''
     登录函数，密码输错三次锁定，用户名输错可以一直输入
@@ -149,7 +148,6 @@ def check_record():
 @common.login_auth
 def shopping():
     print('购物')
-    # 取回用户余额和原来购物车中的商品
     goods_list = [
         ['coffe', 30],
         ['chicken', 20],
@@ -184,6 +182,8 @@ def shopping():
             print(shopping_cart)
             buy = input('buy or not (y/n)>>:').strip()
             if buy == 'y':
+                #正常需要加密码验证
+                if cost_money==0:break
                 if shop.shopping_interface(user_data['name'], shopping_cart, cost_money):
                     print('buy success ')
                     break
