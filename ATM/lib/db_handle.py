@@ -10,10 +10,11 @@ def update(update_dic):
         f.flush()
 
 
-def get_dic_by_name(name):
+def select(name):
     path = r'%s/%s.json' % (setting.BASE_DB_LOCAL, name)
     if os.path.isfile(path):
         with open(path, 'r', encoding='utf-8') as f:
             return json.load(f)
     else:
         return False
+

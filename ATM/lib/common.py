@@ -1,4 +1,3 @@
-import os
 import logging.config
 from core import src
 from  conf import setting
@@ -6,10 +5,10 @@ from  conf import setting
 # 登录认证装饰器
 def login_auth(func):
     def wrapper(*args, **kwargs):
-        if not src.current_user:
-            print('没有登录')
-        else:
+        if src.user_data['is_auth']:
             return func(*args, **kwargs)
+        else:
+            print('没有登录')
 
     return wrapper
 
