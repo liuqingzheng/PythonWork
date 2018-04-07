@@ -13,7 +13,8 @@ def login_auth(func):
         if not src.user_data['is_auth']:
             print('没有登录')
             src.login()
-        return func(*args, **kwargs)
+        else:
+            return func(*args, **kwargs)
 
     return wrapper
 

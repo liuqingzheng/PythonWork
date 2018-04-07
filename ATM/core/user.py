@@ -1,9 +1,6 @@
-import json
-import os
 
 from lib import db_handle
 from lib import common
-from conf import setting
 
 logger_user = common.get_logger('user')
 
@@ -41,7 +38,7 @@ def unlock_user(name):
     logger_user.info('%s 被解锁了' % name)
 
 
-def register_user(name, password, banlance=15000):
+def register_user(name, password, balance=15000):
     '''
     注册用户接口
     :param name:
@@ -49,7 +46,7 @@ def register_user(name, password, banlance=15000):
     :param banlance:
     :return:
     '''
-    user_dic = {'name': name, 'password': password, 'locked': False, 'account': banlance, 'credit': banlance,
+    user_dic = {'name': name, 'password': password, 'locked': False, 'account': balance, 'credit': balance,
                 'shopping_cart': {}, 'bankflow': []}
     db_handle.update(user_dic)
     logger_user.info('%s 注册了' % name)
