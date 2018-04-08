@@ -1,6 +1,6 @@
-from core import bank
-from core import user
-from core import shop
+from interface import bank
+from interface import user
+from interface import shop
 from lib import common
 
 user_data = {

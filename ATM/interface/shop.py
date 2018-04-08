@@ -1,7 +1,7 @@
 from lib import common
-from lib import db_handle
-from core import user
-from core import bank
+from db import db_handle
+from interface import user
+from interface import bank
 
 logger_shopping = common.get_logger('Shopoing')
 

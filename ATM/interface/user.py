@@ -1,5 +1,5 @@
 
-from lib import db_handle
+from db import db_handle
 from lib import common
 
 logger_user = common.get_logger('user')

@@ -1,6 +1,6 @@
-from lib import db_handle
+from db import db_handle
 from lib import common
-from core import user
+from interface import user
 
 logger_bank = common.get_logger('Bnak')
 
